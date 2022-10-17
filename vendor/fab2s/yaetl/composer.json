@@ -1,0 +1,78 @@
+{
+    "name": "fab2s/yaetl",
+    "description": "Widely Extended Nodal Extract-Transform-Load ETL Workflow AKA NEJQTL or Nodal-Extract-Join-Qualify-Tranform-Load",
+    "type": "library",
+    "authors": [{
+        "name": "Fabrice de Stefanis"
+    }],
+    "support": {
+        "issues": "https://github.com/fab2s/YaEtl/issues",
+        "source": "https://github.com/fab2s/YaEtl"
+    },
+    "keywords": [
+        "Extract-Transform-Load",
+        "ETL",
+        "Fluent",
+        "symfony",
+        "laravel",
+        "PHP",
+        "Nodal",
+        "Extract",
+        "Join",
+        "Qualify",
+        "Transform",
+        "Load",
+        "WorkFlow",
+        "Branch",
+        "Serializable",
+        "Data-Processing"
+    ],
+    "license": [
+        "MIT"
+    ],
+    "require": {
+        "php": "^7.2|^8.0",
+        "fab2s/nodalflow": "dev-add_tests",
+        "fab2s/opinhelpers": "^1.0"
+    },
+    "require-dev": {
+        "ext-pdo": "*",
+        "phpunit/phpunit": "^9.0|^8.0|^7.5",
+        "symfony/console": "^6.0|^5.0|^4.0|^3.4|^2.8",
+        "symfony/event-dispatcher": "^6.0|^5.0|^4.0|^3.4|^2.8",
+        "orchestra/testbench": "^7.0|^6.0|^5.0|^4.0",
+        "friendsofphp/php-cs-fixer": "^3.0|^2.0"
+    },
+    "suggest": {
+        "symfony/console": "To use ProgressBarSubscriber",
+        "laravel/laravel": "To use Laravel (The awesome) implementations"
+    },
+    "autoload": {
+        "psr-4": {
+            "fab2s\\YaEtl\\": "src"
+        },
+        "files": [
+            "src/support/deprecated.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "fab2s\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev",
+            "dev-1.x": "1.x-dev"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -f .*.cache"
+        ],
+        "post-install-cmd": [
+            "rm -f .*.cache"
+        ],
+        "fix": "php-cs-fixer fix --config=./.php-cs-fixer.dist.php -vvv"
+    }
+}

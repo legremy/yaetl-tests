@@ -1,0 +1,12 @@
+{
+    "name": "gremy/yaetl",
+    "autoload": {
+        "psr-4": {
+            "Gremy\\Yaetl\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "fab2s/yaetl": "2.x-dev"
+    }
+}
