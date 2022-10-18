@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '2324d0e5cadd603331d27de142371f0b' => $vendorDir . '/symfony/contracts/Deprecation/function.php',
+    '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     'f86af32b47cf231316b163029625a414' => $vendorDir . '/fab2s/yaetl/src/support/deprecated.php',
+    '667aeda72477189d0494fecd327c3641' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
 );

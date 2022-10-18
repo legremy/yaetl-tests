@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'gremy/yaetl',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '7bd02cf092c4f5e1ed8ab870a5d08fabf8d907c5',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -103,9 +103,9 @@
             'dev_requirement' => false,
         ),
         'gremy/yaetl' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '7bd02cf092c4f5e1ed8ab870a5d08fabf8d907c5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -183,6 +183,17 @@
                 1 => 'dev-main',
             ),
         ),
+        'symfony/polyfill-mbstring' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
+            'aliases' => array(
+                0 => '1.26.x-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'symfony/service-contracts' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -196,6 +207,15 @@
                 0 => '3.2.x-dev',
                 1 => 'dev-main',
             ),
+        ),
+        'symfony/var-dumper' => array(
+            'pretty_version' => '6.2.x-dev',
+            'version' => '6.2.9999999.9999999-dev',
+            'reference' => '9e14f552a46cc5a523b734417fa81dfaed7600e2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/var-dumper',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
     ),
 );

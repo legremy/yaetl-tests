@@ -8,7 +8,9 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
 {
     public static $files = array (
         '2324d0e5cadd603331d27de142371f0b' => __DIR__ . '/..' . '/symfony/contracts/Deprecation/function.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'f86af32b47cf231316b163029625a414' => __DIR__ . '/..' . '/fab2s/yaetl/src/support/deprecated.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -19,7 +21,9 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\' => 18,
+            'Symfony\\Component\\VarDumper\\' => 28,
         ),
         'P' => 
         array (
@@ -42,9 +46,17 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
         array (
             0 => __DIR__ . '/..' . '/fab2s/nodalflow/src',
         ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
         'Symfony\\Contracts\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/contracts',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
         'Psr\\EventDispatcher\\' => 
         array (

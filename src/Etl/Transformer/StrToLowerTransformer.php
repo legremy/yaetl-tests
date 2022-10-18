@@ -5,10 +5,10 @@ namespace Gremy\Yaetl\Etl\Transformer;
 use fab2s\NodalFlow\NodalFlowException;
 use fab2s\YaEtl\Transformers\TransformerAbstract;
 
-class StrToUpperTransformer extends TransformerAbstract
+class StrToLowerTransformer extends TransformerAbstract
 {
     /**
-     * String to upper POC example
+     * String to lower POC example
      *
      * @param array|null $param
      *
@@ -16,6 +16,8 @@ class StrToUpperTransformer extends TransformerAbstract
      */
     public function exec($param = null)
     {
-        return array_map('strtoupper', $param);
+        dump($param);
+        return array_map('strtolower', $param);
     }
+
 }

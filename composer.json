@@ -7,6 +7,7 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "fab2s/yaetl": "2.x-dev"
+        "fab2s/yaetl": "2.x-dev",
+        "symfony/var-dumper": "6.2.x-dev"
     }
 }
