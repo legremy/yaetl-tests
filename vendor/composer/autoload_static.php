@@ -10,6 +10,7 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
         '2324d0e5cadd603331d27de142371f0b' => __DIR__ . '/..' . '/symfony/contracts/Deprecation/function.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'f86af32b47cf231316b163029625a414' => __DIR__ . '/..' . '/fab2s/yaetl/src/support/deprecated.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
@@ -24,6 +25,11 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\' => 18,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'Symfony\\Component\\EventDispatcher\\' => 34,
+        ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
         array (
@@ -34,6 +40,10 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
         'G' => 
         array (
             'Gremy\\Yaetl\\' => 12,
+        ),
+        'B' => 
+        array (
+            'Brick\\Math\\' => 11,
         ),
     );
 
@@ -58,6 +68,14 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'Symfony\\Component\\EventDispatcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
+        ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
         'Psr\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
@@ -73,6 +91,10 @@ class ComposerStaticInit257d5dd172bc151adf5df834a74e53f9
         'Gremy\\Yaetl\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
         ),
     );
 

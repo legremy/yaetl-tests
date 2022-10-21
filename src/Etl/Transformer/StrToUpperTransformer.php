@@ -16,6 +16,10 @@ class StrToUpperTransformer extends TransformerAbstract
      */
     public function exec($param = null)
     {
+        if (is_string($param)) {
+            return strtoupper($param);
+        }
+
         return array_map('strtoupper', $param);
     }
 }

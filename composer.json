@@ -8,6 +8,8 @@
     "minimum-stability": "dev",
     "require": {
         "fab2s/yaetl": "2.x-dev",
-        "symfony/var-dumper": "6.2.x-dev"
+        "symfony/var-dumper": "6.2.x-dev",
+        "symfony/event-dispatcher": "6.2.x-dev",
+        "ramsey/uuid": "5.x-dev"
     }
 }

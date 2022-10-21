@@ -3,13 +3,22 @@
         'name' => 'gremy/yaetl',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7bd02cf092c4f5e1ed8ab870a5d08fabf8d907c5',
+        'reference' => '1058f079baa61f00f321bd0538be03d1aad89dfe',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'brick/math' => array(
+            'pretty_version' => '0.10.2',
+            'version' => '0.10.2.0',
+            'reference' => '459f2781e1a08d52ee56b0b1444086e038561e3f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../brick/math',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'fab2s/bom' => array(
             'pretty_version' => '1.0.1',
             'version' => '1.0.1.0',
@@ -105,7 +114,7 @@
         'gremy/yaetl' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7bd02cf092c4f5e1ed8ab870a5d08fabf8d907c5',
+            'reference' => '1058f079baa61f00f321bd0538be03d1aad89dfe',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -144,6 +153,27 @@
             ),
             'dev_requirement' => false,
         ),
+        'psr/event-dispatcher-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'ramsey/uuid' => array(
+            'pretty_version' => '5.x-dev',
+            'version' => '5.9999999.9999999.9999999-dev',
+            'reference' => 'b34c4c34d0c9202b0fe550a7e0dee4a67f11da83',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ramsey/uuid',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'rhumsaa/uuid' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '5.x-dev',
+            ),
+        ),
         'symfony/cache-contracts' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -169,11 +199,26 @@
                 1 => 'dev-main',
             ),
         ),
+        'symfony/event-dispatcher' => array(
+            'pretty_version' => '6.2.x-dev',
+            'version' => '6.2.9999999.9999999-dev',
+            'reference' => '7e0b66a9f3b02a166140603af1b2253827c750fe',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/event-dispatcher',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/event-dispatcher-contracts' => array(
             'dev_requirement' => false,
             'replaced' => array(
                 0 => '3.2.x-dev',
                 1 => 'dev-main',
+            ),
+        ),
+        'symfony/event-dispatcher-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.0|3.0',
             ),
         ),
         'symfony/http-client-contracts' => array(

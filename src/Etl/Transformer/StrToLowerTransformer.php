@@ -16,7 +16,6 @@ class StrToLowerTransformer extends TransformerAbstract
      */
     public function exec($param = null)
     {
-        dump($param);
         return array_map('strtolower', $param);
     }
 

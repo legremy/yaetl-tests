@@ -2,12 +2,15 @@
 
 require './../vendor/autoload.php';
 
+use fab2s\NodalFlow\Events\FlowEvent;
+use fab2s\NodalFlow\Events\FlowEventInterface;
 use fab2s\NodalFlow\Flows\FlowRegistry;
 use fab2s\YaEtl\Extractors\CallableExtractor;
 use fab2s\YaEtl\Loaders\File\CsvLoader;
-use fab2s\YaEtl\Qualifiers\CallableQualifier;
+use fab2s\NodalFlow\Nodes\CallableNode;
 use fab2s\YaEtl\YaEtl;
 use fab2s\YaEtl\Extractors\File\CsvExtractor;
+use Gremy\Yaetl\Etl\Loader\CustomCsvLoader;
 use Gremy\Yaetl\Etl\Transformer\StrToLowerTransformer;
 use Gremy\Yaetl\Etl\Transformer\StrToUpperTransformer;
 
@@ -33,12 +36,27 @@ try {
 
     $strtoupperCsvLoader = new CsvLoader($pathToCsvStrtoupperOutput);
     $strtoupperCsvLoader->setHeader(['Firstname', 'Name', 'Address', 'City', 'State', 'Zipcode']);
-    $strtolowerCsvLoader = new CsvLoader($pathToCsvStrtolowerOutput);
+    $strtolowerCsvLoader = new CustomCsvLoader($pathToCsvStrtolowerOutput);
 
 } catch(Exception $e){
     echo $e->getMessage();
     die();
 }
+
+$yaEtl->setProgressMod(1);
+
+$yaEtl->getDispatcher()->addListener(FlowEvent::FLOW_START, function(FlowEventInterface $event) {
+    dump('Début du flow');
+});
+
+$yaEtl->getDispatcher()->addListener(FlowEvent::FLOW_PROGRESS, function(FlowEventInterface $event) {
+    dump('étape - id node : ' . $event->getNode()->getId());
+});
+
+$yaEtl->getDispatcher()->addListener(FlowEvent::FLOW_SUCCESS, function(FlowEventInterface $event) {
+    dump('Succès du flow');
+});
+
 
 // premier etl - output dans un fichier csv
 $yaEtl
@@ -59,13 +77,12 @@ $yaEtl
     ->exec()
 ;
 
-use fab2s\NodalFlow\Nodes\CallableNode;
 
 $callableExecNode = new CallableNode(function($param) {
     return $param + 1;
 }, true);
 
-// which allows us to call the closure using
+
 dump($result = $callableExecNode->exec(1));
 
 $callableTraversableNode = new CallableNode(function($param) {
@@ -74,21 +91,16 @@ $callableTraversableNode = new CallableNode(function($param) {
     }
 }, true, true);
 
-// which allows us to call the closure using
+
 foreach ($callableTraversableNode->getTraversable(10) as $result) {
     //dump($result);
 }
 
 $registry = new FlowRegistry;
 
-// get any Flow instance by Id
-//$registry->getFlow($flowId);
-
-// get any Node instance by Id
 dump($registry->getNode($callableTraversableNode->getId()));
 dump($callableTraversableNode->getId());
-// get the underlying array struct for a given Flow Id
-//$registry->get($flowId);
+
 
 
 // // oh but what if ...
