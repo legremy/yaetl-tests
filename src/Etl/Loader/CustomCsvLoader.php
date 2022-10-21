@@ -83,6 +83,7 @@ class CustomCsvLoader extends FileLoaderAbstract
      */
     public function writeCsvLine(array $record)
     {
+        dump("Writing csv Line...");
         return fputcsv($this->handle, $record, $this->delimiter, $this->enclosure, $this->escape);
     }
 

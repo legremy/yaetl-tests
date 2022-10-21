@@ -2,6 +2,7 @@
 
 namespace Gremy\Yaetl\Etl\Campain;
 
+use Exception;
 use fab2s\NodalFlow\Events\FlowEvent;
 use fab2s\NodalFlow\Events\FlowEventInterface;
 use fab2s\YaEtl\YaEtl;
@@ -26,6 +27,7 @@ class EtlCampain
         dump("Executing campain n°" . $this->id);
 
         foreach ($this->etls as $etl) {
+            $etl->setProgressMod(1);
 
             $etl->getDispatcher()->addListener(FlowEvent::FLOW_START, function(FlowEventInterface $event) {
                 $yaEtl = $event->getFlow();
@@ -33,6 +35,13 @@ class EtlCampain
                     dump('Flow n°' . $yaEtl->getId() . " starting...");
                     dump($yaEtl->getNodeMap());
                 }
+            });
+
+            $etl->getDispatcher()->addListener(FlowEvent::FLOW_PROGRESS, function(FlowEventInterface $event) {
+                $yaEtl = $event->getFlow();
+                $node = $event->getNode();
+//                dump($node);
+//                dump($yaEtl);
             });
 
             $etl->getDispatcher()->addListener(FlowEvent::FLOW_SUCCESS, function(FlowEventInterface $event) {
@@ -43,7 +52,13 @@ class EtlCampain
                 dump('Flow n°' . $yaEtl->getId() . ' succeeded.');
             });
 
-            $etl->exec();
+            try {
+                $etl->exec();
+            } catch (Exception $e) {
+                echo 'oops';
+            }
+
+            dump("Flow status: " . $etl->getFlowStatus());
         }
 
         dump("Campaign n°" . $this->id . " executed");

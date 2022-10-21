@@ -8,7 +8,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/fab2s/context-exception" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fab2s/utf8" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fab2s/strings" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fab2s/souuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fab2s/filelock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fab2s/nodalflow" />
