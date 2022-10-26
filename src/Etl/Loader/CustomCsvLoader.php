@@ -16,6 +16,8 @@ class CustomCsvLoader extends FileLoaderAbstract
      */
     protected $isFirstLine = true;
 
+    private bool $displayReport = true;
+
     /**
      * CsvLoader constructor.
      *
@@ -83,6 +85,7 @@ class CustomCsvLoader extends FileLoaderAbstract
      */
     public function writeCsvLine(array $record)
     {
+        if ($this->displayReport)
         dump("Writing csv Line...");
         return fputcsv($this->handle, $record, $this->delimiter, $this->enclosure, $this->escape);
     }

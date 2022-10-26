@@ -54,7 +54,7 @@ $yaEtl1
 ;
 
 $yaEtl2
-    ->from($lineExtractor2)
+    ->from(clone $lineExtractor)
     ->transform($sraTransformer2)
     ->transform($strToLowerTransformer)
     ->to($sraLoader2)
